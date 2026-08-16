@@ -2,8 +2,34 @@
   "id": "google",
   "name": "Google Search",
   "domains": ["google.com", "*.google.com", "www.google.com"],
-  "notes": ["notes/overview.md"],
+  "notes": ["notes/overview.md", "notes/appetite.md"],
   "nodeTools": {
+    "search_appetite": {
+      "description": "Search Google for appetite-related content (restaurants, recipes, nutrition) and extract enriched results including optional rating, cook time, and calorie data.",
+      "path": "tools/appetite-search.js",
+      "callable": "searchAppetite",
+      "args": {
+        "query": {
+          "type": "string",
+          "required": true,
+          "description": "Search query, e.g. 'pasta carbonara', 'Italian restaurants Chicago', 'avocado nutrition'."
+        },
+        "type": {
+          "type": "string",
+          "required": false,
+          "description": "Optional category hint to qualify the query: 'restaurant', 'recipe', or 'nutrition'. Omit for a plain search."
+        },
+        "maxResults": {
+          "type": "integer",
+          "required": false,
+          "description": "Maximum number of organic results to return (default 10, max 50)."
+        }
+      },
+      "returns": {
+        "type": "array",
+        "description": "Array of result objects with title, url, snippet, and optional rating, cookTime, calories fields."
+      }
+    },
     "search_and_extract": {
       "description": "Perform a Google search and extract top organic results.",
       "path": "tools/search-extract.js",
