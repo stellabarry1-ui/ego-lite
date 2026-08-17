@@ -9,7 +9,8 @@ function boundedInteger(value, fallback, max) {
  * food/dining/recipe results more reliably.
  *
  * @param {string} query  - Raw query from the caller.
- * @param {string} [type] - Optional category hint: "restaurant", "recipe", or "nutrition".
+ * @param {string} [type] - Optional category hint: "restaurant", "recipe", "nutrition",
+ *   "herbs-and-spices", "rice", "potatoes", or "sausage".
  * @returns {string} Qualified search query string.
  */
 function buildAppetiteQuery(query, type) {
@@ -21,6 +22,18 @@ function buildAppetiteQuery(query, type) {
       return `${query} recipe`;
     case "nutrition":
       return `${query} nutrition facts`;
+    case "herbs-and-spices":
+    case "herbs":
+    case "spices":
+      return `${query} herbs spices`;
+    case "rice":
+      return `${query} rice recipe`;
+    case "potatoes":
+    case "potato":
+      return `${query} potato recipe`;
+    case "sausage":
+    case "sausages":
+      return `${query} sausage recipe`;
     default:
       return query;
   }

@@ -17,7 +17,7 @@
         "type": {
           "type": "string",
           "required": false,
-          "description": "Optional category hint to qualify the query: 'restaurant', 'recipe', or 'nutrition'. Omit for a plain search."
+          "description": "Optional category hint to qualify the query: 'restaurant', 'recipe', 'nutrition', 'herbs-and-spices', 'rice', 'potatoes', or 'sausage'. Omit for a plain search."
         },
         "maxResults": {
           "type": "integer",

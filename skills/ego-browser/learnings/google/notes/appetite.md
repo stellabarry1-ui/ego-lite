@@ -5,6 +5,19 @@
 Search Google for appetite-related content: restaurants, recipes, nutrition information,
 food blogs, and dining guides.
 
+## Supported `type` hints
+
+| `type` value | Aliases | Query suffix added |
+|---|---|---|
+| `recipe` | — | `recipe` |
+| `restaurant` | — | `restaurant` |
+| `nutrition` | — | `nutrition facts` |
+| `herbs-and-spices` | `herbs`, `spices` | `herbs spices` |
+| `rice` | — | `rice recipe` |
+| `potatoes` | `potato` | `potato recipe` |
+| `sausage` | `sausages` | `sausage recipe` |
+| *(omitted)* | — | no suffix; plain query |
+
 ## Useful search patterns
 
 - `"restaurants near me"` — local dining results with map pack
